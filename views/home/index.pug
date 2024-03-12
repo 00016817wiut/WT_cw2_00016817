@@ -1,0 +1,34 @@
+include ../head.pug
+head 
+  link(rel='stylesheet' href='/css/styles.css')
+body
+    .content-spacing
+      h1 List of Events
+      table
+        thead
+          tr
+            th(scope="col") ID
+            th(scope="col") Event Name
+            th(scope="col") Event DateTime
+            th(scope="col") Place
+            th(scope="col") Contact Phone
+            th(scope="col") Actions
+        tbody
+          tr
+            td 1
+            td Example Event Name 1
+            td 2024-02-17 10:00
+            td Example Plalce
+            td +1234567890
+            td
+              button.edit Edit
+              button.delete Delete
+          tr
+            td 2
+            td Example Event Name 2
+            td 2024-02-17 10:00
+            td Example Venue
+            td +1234567890
+            td
+              button.edit Edit
+              button.delete Delete

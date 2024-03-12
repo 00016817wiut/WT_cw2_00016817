@@ -1,0 +1,51 @@
+/* GENERAL */
+body {
+  background-color: #ffffff;
+  color: #1e90ff;
+}
+.content-spacing {
+  width: 70%;
+  margin: auto;
+  margin-top: 5%;
+}
+/* Table | index.pug */
+table {
+  width: 100%;
+  background-color: rgb(125, 126, 126);
+  color: white;
+}
+th {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+td {
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  background-color: #4c4f4f;
+  border: 1px solid black;
+}
+.edit {
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-right: 5px;
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  transition: 0.3s;
+}
+.edit:hover {
+  background-color: #007bf6;
+}
+.delete {
+  padding: 5px 15px;
+  border-radius: 4px;
+  margin-right: 5px;
+  background-color: #dc143c;
+  border: none;
+  color: white;
+  transition: 0.3s;
+}
+.delete:hover {
+  background-color: #c80000;
+}
