@@ -11,14 +11,14 @@ How to Run the App Locally
 
 Follow the following steps in order to run the application:
 
-1. Clone the repository using my url
+1. Clone the repository using my url:
    git clone https://github.com/00016817wiut/WT_cw2_00016817
 2. Open the ZIP file to get all files.
 3. Install dependencies:
    npm install
 4. Start the server by using following command:
    npm start
-5. Open web browser and navigate to 'http://localhost:3000'
+5. Open web browser and navigate to: 'http://localhost:3000'
 
 Application Dependencies
 
