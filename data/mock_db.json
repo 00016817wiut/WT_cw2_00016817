@@ -52,5 +52,14 @@
             "place": "Mountains",
             "contactPhone": "+998971211181"
         }
+    },
+    {
+        "id": "Is0D",
+        "event": {
+            "eventName": "Launch parties",
+            "eventDateTime": "15/03/2024 18:00",
+            "place": "Turon Restaraunt",
+            "contactPhone": "+998912134145"
+        }
     }
 ]
