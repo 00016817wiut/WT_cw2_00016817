@@ -1,10 +1,11 @@
-const { body } = require("express-validator");
+const { body, param } = require("express-validator");
+const event_service = require("../../services/event");
 
 const addEventValidation = () => {
   return [
     body("eventName")
       .notEmpty()
-      .withMessage("Event name cannot be empty")
+      .withMessage("Event name must not be empty")
       .isLength({ min: 8, max: 255 })
       .withMessage("Event name must be between 8 and 255 characters long"),
     body("eventDateTime")
@@ -17,7 +18,7 @@ const addEventValidation = () => {
       .withMessage(
         'Invalid date and time format. Please use "DD/MM/YYYY HH:mm" format.'
       ),
-    body("place").notEmpty().withMessage("Event venue must not be empty"),
+    body("place").notEmpty().withMessage("Event place must not be empty"),
     body("contactPhone")
       .notEmpty()
       .withMessage("Contact phone must not be empty")
@@ -26,6 +27,18 @@ const addEventValidation = () => {
   ];
 };
 
+const deleteEventValidation = () => {
+  return [
+    param("id").custom(async (id) => {
+      const exists = await event_service.getById(id);
+      if (!exists) {
+        throw new Error("Event not found");
+      }
+    }),
+  ];
+};
+
 module.exports = {
   addEventValidation,
+  deleteEventValidation,
 };

@@ -1,20 +1,20 @@
 [
-  {
-    "id": "aNqT",
-    "event": {
-      "eventName": "Appointment",
-      "eventDateTime": "02/04/2024 19:00",
-      "place": "Choyxona",
-      "contactPhone": "+998 (97) 777 77 77"
+    {
+        "id": "aNqT",
+        "event": {
+            "eventName": "Appointment",
+            "eventDateTime": "02/04/2024 19:00",
+            "place": "Choyxona",
+            "contactPhone": "+998977777777"
+        }
+    },
+    {
+        "id": "U2SU",
+        "event": {
+            "eventName": "Interview with intern",
+            "eventDateTime": "06/03/2024 12:01",
+            "place": "Office",
+            "contactPhone": "+998976066636"
+        }
     }
-  },
-  {
-    "id": "mLmX",
-    "event": {
-      "eventName": "Interview with intern",
-      "eventDateTime": "06/03/2024 12:01",
-      "place": "Office",
-      "contactPhone": "+998711234566"
-    }
-  }
 ]
