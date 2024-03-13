@@ -5,7 +5,7 @@
             "eventName": "Appointment",
             "eventDateTime": "02/04/2024 19:00",
             "place": "Choyxona Rayhon",
-            "contactPhone": "+998977777777"
+            "contactPhone": "+998974428354"
         }
     },
     {
@@ -33,6 +33,24 @@
             "eventDateTime": "09/04/2024 09:00",
             "place": "Office",
             "contactPhone": "+998977777777"
+        }
+    },
+    {
+        "id": "dqD0",
+        "event": {
+            "eventName": "Launch parties",
+            "eventDateTime": "15/03/2024 18:00",
+            "place": "Turon Restaraunt",
+            "contactPhone": "+998912134145"
+        }
+    },
+    {
+        "id": "GwKV",
+        "event": {
+            "eventName": "Navruz Celebration",
+            "eventDateTime": "03/08/2025 14:00",
+            "place": "Mountains",
+            "contactPhone": "+998971211181"
         }
     }
 ]

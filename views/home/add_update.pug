@@ -1,12 +1,29 @@
 include ../head.pug
 body
+  header
+    div.container
+      h1 Apex Solutions Group
+      nav
+         ul 
+          li 
+            a(href="#") Home
+          li 
+             a(href="#") About Us 
+          li 
+           a(href="#") Services 
+           li 
+            a(href="#") Contact 
+          li 
+           a(href="http://localhost:3000") Events
+          li 
+           a.active(href="http://localhost:3000/add") Add Events
   .container.mt-5
-    h1 #{mode}
+    h1 Add <span class="h1-span">Events</span>
     .mb-3
       label(for="eventName" class="form-label") Event Name
       input(type="text" class="form-control" id="eventName" name="eventName" required)
     .mb-3
-      label(for="eventDateTime" class="form-label") Event Date and Time
+      label(for="eventDateTime" class="form-label") Event Date/Time
       .input-group.date(id="datetimepicker1" data-target-input="nearest")
         input(type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" id="eventDateTime" name="eventDateTime" required)
         .input-group-append(data-target="#datetimepicker1" data-toggle="datetimepicker")
@@ -18,10 +35,12 @@ body
     .mb-3
       label(for="contactPhone" class="form-label") Contact Phone
       input(type="tel" class="form-control" id="contactPhone" name="contactPhone" required)
-    button(type="submit" class="btn btn-success" onclick="submitForm()") #{mode === 'Update' ? 'Update' : 'Add'}
+    button(type="submit" class="btn btn-primary" onclick="submitForm()") #{mode === 'Update' ? 'Update' : 'Add'}
     span &nbsp;
-    button(type="submit" class="btn btn-primary" onclick="window.location.href='/'") Back to list
-
+    button(type="submit" class="btn btn-secondary" onclick="window.location.href='/'") Back to list
+  footer 
+        h3 Apex Solutions Group
+        p This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service
   script.
     const format = 'DD/MM/YYYY HH:mm'
     const picker = new tempusDominus.TempusDominus(document.getElementById('datetimepicker1'),{
@@ -43,7 +62,6 @@ body
 
       document.getElementById('place').value = eventData.place || '';
       document.getElementById('contactPhone').value = eventData.contactPhone || '';
-      document.getElementById('seat').value = eventData.seat || '';
     }
 
     function submitForm() {

@@ -2,25 +2,30 @@ include ../head.pug
 <!DOCTYPE html>
 html(lang="en")
 head 
-  title Event List | Apex Innovations Inc.
+  title Event List | Apex Solutions Group
 body
-    nav
-      div.content-spacing
-        ul  
-          li
-            a.lists(href="#") Apex Innovations Inc.
-          li
-            a.lists(href="#") Home
-          li
-            a.lists(href="#") About Company 
-          li
-            a.lists(href="#") Contact Us 
-          li
-            a.lists.active(href="http://localhost:3000/") See Company events
-    
-      div.content-spacing
-        h1 List
-        a(href='/add', role='button') Add      
+    header
+      div.container
+        h1 Apex Solutions Group
+        nav
+          ul 
+            li 
+              a(href="") Home
+            li 
+              a(href="") About Us 
+            li 
+              a(href="") Services 
+            li 
+              a(href="") Contact 
+            li 
+              a.active(href="http://localhost:3000") Events
+            li 
+              a(href="http://localhost:3000/add") Add Events
+    section.events
+      div.container
+        h1 List of <span class="h1-span">Events</span>  
+        p In this page you can view the list of events in the Apex Solutions Group <br> <span class="admin">This page is only available for administrators.</span>
+        a.add-btn(href='/add', role='button') Add      
         table
           thead
             tr
@@ -32,6 +37,8 @@ body
               th(scope="col") Actions
           tbody
       footer 
+        h3 Apex Solutions Group
+        p This web application was created to fulfill Web Technology module’s requirements and does not represent an actual company or service
 
 script.
   document.addEventListener('DOMContentLoaded', function() {
