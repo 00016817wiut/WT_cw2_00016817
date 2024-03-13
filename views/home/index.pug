@@ -1,55 +1,76 @@
 include ../head.pug
+<!DOCTYPE html>
+html(lang="en")
+head 
+  title Event List | Apex Innovations Inc.
 body
-    .container.mt-5
-      h1 List
-      table.table.table-responsive.table-hover.table-striped.table-dark
-        thead
-          tr
-            th(scope="col") ID
-            th(scope="col") Event Name
-            th(scope="col") Event DateTime
-            th(scope="col") Place
-            th(scope="col") Contact Phone
-            th(scope="col") Actions
-        tbody
-script.
-      document.addEventListener('DOMContentLoaded', function() {
-        axios.get('/api/event')
-          .then(function(response) {
-            const events = response.data;
-            const tableBody = document.querySelector('table tbody');
-            events.forEach(t => {
-              const row = document.createElement('tr');
-              const event = t.event
-              row.innerHTML = `
-                <td>${t.id}</td>
-                <td>${event.eventName}</td>
-                <td>${event.eventDateTime}</td>
-                <td>${event.place}</td>
-                <td>${event.contactPhone}</td>
-                <td>
-                  <button class="btn btn-primary btn-sm">Edit</button>
-                  <button class="btn btn-danger btn-sm" data-id="${t.id}">Delete</button>
-                </td>
-              `;
-              tableBody.appendChild(row);
-            });
-          })
-          .catch(function(error) {
-            console.log(error);
-          });
+    nav
+      div.content-spacing
+        ul  
+          li
+            a.lists(href="#") Apex Innovations Inc.
+          li
+            a.lists(href="#") Home
+          li
+            a.lists(href="#") About Company 
+          li
+            a.lists(href="#") Contact Us 
+          li
+            a.lists.active(href="http://localhost:3000/") See Company events
+    
+      div.content-spacing
+        h1 List
+        a(href='/add', role='button') Add      
+        table
+          thead
+            tr
+              th(scope="col") ID
+              th(scope="col") Event Name
+              th(scope="col") Event DateTime
+              th(scope="col") Place
+              th(scope="col") Contact Phone
+              th(scope="col") Actions
+          tbody
+      footer 
 
-          // Use event delegation for delete buttons
-          document.addEventListener('click', function(event) {
-            if (event.target && event.target.classList.contains('btn-danger')) {
-              const eventId = event.target.getAttribute('data-id');
-              axios.delete(`/api/event/${eventId}`).then(function(response) {
-                console.log('Delete successful', response);
-                location.href = '/'
-              })
-              .catch(function(error) {
-                console.log('Error deleting event', error);
-              });
-            }
-          });
+script.
+  document.addEventListener('DOMContentLoaded', function() {
+    axios.get('/api/event').then(function(response) {
+      const events = response.data;
+      const tableBody = document.querySelector('table tbody');
+      events.forEach(t => {
+        const row = document.createElement('tr');
+        const event = t.event
+        row.innerHTML = `
+          <td>${t.id}</td>
+          <td>${event.eventName}</td>
+          <td>${event.eventDateTime}</td>
+          <td>${event.place}</td>
+          <td>${event.contactPhone}</td>
+          <td>
+            <button class="btn btn-primary btn-sm" data-id="${t.id}" onclick="window.location.href='/update/${t.id}'">Update</button>
+            <button class="btn btn-danger btn-sm" data-id="${t.id}">Delete</button>
+          </td>
+        `;
+        tableBody.appendChild(row);
       });
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+    // Use event delegation for delete buttons
+    document.addEventListener('click', function(event) {
+      if (event.target && event.target.classList.contains('btn-danger')) {
+        const eventId = event.target.getAttribute('data-id');
+        axios.delete(`/api/event/${eventId}`).then(function(response) {
+          alert('Deleted successfully', response);
+          location.href = '/'
+        })
+        .catch(function(error) {
+          alert('Error deleting event: ' + error);
+        });
+      }
+    });
+    
+  });

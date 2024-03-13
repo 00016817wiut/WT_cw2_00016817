@@ -4,17 +4,35 @@
         "event": {
             "eventName": "Appointment",
             "eventDateTime": "02/04/2024 19:00",
-            "place": "Choyxona",
+            "place": "Choyxona Rayhon",
             "contactPhone": "+998977777777"
         }
     },
     {
         "id": "U2SU",
         "event": {
-            "eventName": "Interview with intern",
+            "eventName": "Interview with interns",
             "eventDateTime": "06/03/2024 12:01",
             "place": "Office",
             "contactPhone": "+998976066636"
+        }
+    },
+    {
+        "id": "cb7E",
+        "event": {
+            "eventName": "Vehicle Purchase",
+            "eventDateTime": "06/05/2024 16:30",
+            "place": "Dealer",
+            "contactPhone": "+998911011141"
+        }
+    },
+    {
+        "id": "TmLA",
+        "event": {
+            "eventName": "Training program for employees",
+            "eventDateTime": "09/04/2024 09:00",
+            "place": "Office",
+            "contactPhone": "+998977777777"
         }
     }
 ]
