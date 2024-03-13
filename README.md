@@ -24,9 +24,8 @@ Application Dependencies
 
 The Event Planning Application relies on the following dependencies:
 -Express.js
--Node.js
 -Pug
 
-Repository and Hosted Application Links
+Repository Link
 
 - GitHub Repository link: https://github.com/00016817wiut/WT_cw2_00016817
