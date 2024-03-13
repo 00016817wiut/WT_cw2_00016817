@@ -8,9 +8,8 @@ body
             th(scope="col") ID
             th(scope="col") Event Name
             th(scope="col") Event DateTime
-            th(scope="col") Venue
+            th(scope="col") Place
             th(scope="col") Contact Phone
-            th(scope="col") Seat
             th(scope="col") Actions
         tbody
 script.
@@ -26,9 +25,8 @@ script.
                 <td>${t.id}</td>
                 <td>${event.eventName}</td>
                 <td>${event.eventDateTime}</td>
-                <td>${event.venue}</td>
+                <td>${event.place}</td>
                 <td>${event.contactPhone}</td>
-                <td>${event.seat}</td>
                 <td>
                   <button class="btn btn-primary btn-sm">Edit</button>
                   <button class="btn btn-danger btn-sm">Delete</button>
